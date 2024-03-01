@@ -23,6 +23,7 @@ const Header = () => {
         pos={'fixed'}
         top={'4'}
         left={'2'}
+        zIndex={'overlay'}
         colorScheme="purple"
         p={'0'}
         w={'10'}
