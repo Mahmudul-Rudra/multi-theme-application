@@ -16,10 +16,10 @@ const SignUp = () => {
       <form>
         <VStack
           alignItems={'stretch'}
-          spacing={'8'}
+          spacing={['4', '8']}
           w={['full', '96']}
           m={'auto'}
-          my={'5'}
+          my={'-4'}
           overflow={'auto'}
         >
           <Heading textAlign={'center'} textTransform={'uppercase'}>
