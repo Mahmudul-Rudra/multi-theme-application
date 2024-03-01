@@ -14,6 +14,15 @@ const Videos = () => {
         'Sample Video',
         'Sample Video',
       ],
+      description: [
+        'This is a sample video. Here the description will be placed.',
+        'This is a sample video. Here the description will be placed.',
+        'This is a sample video. Here the description will be placed.',
+        'This is a sample video. Here the description will be placed.',
+        'This is a sample video. Here the description will be placed.',
+        'This is a sample video. Here the description will be placed.',
+        'This is a sample video. Here the description will be placed.',
+      ],
       src: [
         'https://player.vimeo.com/progressive_redirect/playback/689949818/rendition/540p?loc=external&oauth2_token_id=1027659655&signature=cf602155bf49e4e74db6f2ec9d4ecf067fbab44c4295a8950d58ecdb88910882',
         'https://player.vimeo.com/progressive_redirect/playback/697718184/rendition/360p?loc=external&oauth2_token_id=1027659655&signature=26d69c3df603d083fedd663acaab4d35a33444d11033a626864cf1e578e136cf',
@@ -27,13 +36,15 @@ const Videos = () => {
   ];
 
   const [videoSrc, setVideoSrc] = useState(videosArr[0].src[0]);
+  const [videoTitle, setVideoTitle] = useState(videosArr[0].title[0]);
   const [videoDescription, setVideoDescription] = useState(
-    videosArr[0].title[0]
+    videosArr[0].description[0]
   );
 
   const handleVideoChange = index => {
     setVideoSrc(videosArr[0].src[index]);
-    setVideoDescription(videosArr[0].title[index] + ' ' + parseInt(index + 1));
+    setVideoTitle(videosArr[0].title[index] + ' ' + parseInt(index + 1));
+    setVideoDescription(videosArr[0].description[index]);
   };
   return (
     <Stack direction={['column', 'row']} h={'100vh'}>
@@ -46,10 +57,8 @@ const Videos = () => {
         ></video>
 
         <VStack alignItems={'flex-start'} p={'8'} w={'full'} overflow={'auto'}>
-          <Heading>{videoDescription}</Heading>
-          <Text>
-            This is a sample video. Here the description will be placed.
-          </Text>
+          <Heading>{videoTitle}</Heading>
+          <Text>{videoDescription}</Text>
         </VStack>
       </VStack>
       <VStack
